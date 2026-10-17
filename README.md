@@ -22,16 +22,6 @@ Também pode servir a pasta por um servidor local, se preferir. O projeto não p
 - **Espaço** — inicia/pausa. **R** — reinicia. **Esc** — pausa.
 - O texto é salvo automaticamente neste navegador. Use **Limpar** para apagá-lo.
 
-## Publicar na internet
-
-É um site estático. Publique os arquivos `index.html`, `styles.css` e `script.js` em qualquer hospedagem de sites estáticos, como **GitHub Pages**, **Netlify**, **Cloudflare Pages** ou **Vercel**. Em geral, basta criar um site novo, enviar esta pasta (ou conectá-la a um repositório Git) e manter `index.html` como arquivo de entrada. Essas plataformas fornecem um endereço público HTTPS. A configuração exata varia conforme o serviço e seu plano.
-
-### Exemplo: GitHub Pages
-
-1. Crie um repositório no GitHub e envie os três arquivos do site.
-2. No repositório, abra **Settings → Pages**.
-3. Em **Build and deployment**, escolha **Deploy from a branch**, selecione a branch principal e a pasta `/ (root)`, e salve.
-4. Aguarde a publicação e abra o endereço mostrado na área Pages.
 
 ## Privacidade
 
