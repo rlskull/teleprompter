@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101218" />
+    <meta name="description" content="Teleprompter simples e gratuito para ensaiar e gravar seus vídeos." />
+    <title>Roteiro — Teleprompter</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Roteiro, início">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>roteiro<span class="brand-period">.</span></span>
+      </a>
+      <span class="topbar-note"><span class="status-dot"></span> Seu espaço de gravação</span>
+    </header>
+
+    <main id="inicio" class="layout">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="eyebrow"><span>01</span> PREPARE SUA GRAVAÇÃO</div>
+        <h1 id="page-title">Suas ideias,<br /><span>no seu ritmo.</span></h1>
+        <p class="intro-copy">Cole seu roteiro, ajuste a leitura e fale com a câmera com mais confiança.</p>
+      </section>
+
+      <section class="workspace" aria-label="Teleprompter">
+        <aside class="editor-panel" aria-label="Configurações do roteiro">
+          <div class="panel-heading">
+            <div><span class="step-label">SEU ROTEIRO</span><h2>Prepare o texto</h2></div>
+            <button class="text-button" id="clearButton" type="button" title="Apagar o roteiro">Limpar</button>
+          </div>
+          <label class="sr-only" for="scriptInput">Texto do seu roteiro</label>
+          <textarea id="scriptInput" spellcheck="true" placeholder="Escreva ou cole seu roteiro aqui...&#10;&#10;Dica: deixe uma linha em branco entre as ideias para facilitar a leitura."></textarea>
+          <div class="editor-footer"><span id="wordCount">0 palavras</span><span class="saved-indicator"><span class="status-dot"></span>Salvo neste dispositivo</span></div>
+
+          <div class="settings">
+            <div class="setting-label"><label for="speedInput">Velocidade</label><output id="speedValue" for="speedInput">Média</output></div>
+            <div class="range-row"><span class="range-end">Lenta</span><input id="speedInput" type="range" min="10" max="100" value="42" aria-label="Velocidade de rolagem" /><span class="range-end">Rápida</span></div>
+            <div class="setting-label font-label"><label for="fontInput">Tamanho do texto</label><output id="fontValue" for="fontInput">36 px</output></div>
+            <div class="range-row"><span class="font-sample small-a">A</span><input id="fontInput" type="range" min="24" max="64" value="36" aria-label="Tamanho do texto" /><span class="font-sample large-a">A</span></div>
+          </div>
+          <div class="editor-bottom"><span class="keyboard-hint"><kbd>espaço</kbd> iniciar / pausar</span><span class="keyboard-hint"><kbd>R</kbd> reiniciar</span></div>
+        </aside>
+
+        <section class="reader-panel" aria-label="Tela de leitura">
+          <div class="reader-toolbar"><div class="reader-heading"><span class="live-indicator" id="liveIndicator"></span><span id="readerState">PRONTO PARA LER</span></div>
+            <div class="reader-actions"><button id="mirrorButton" class="mirror-button" type="button" aria-pressed="false" title="Espelhar texto"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v16M3.5 5.5h4v9h-4zM12.5 5.5h4v9h-4z" /></svg><span>Espelhar</span></button><button id="fullscreenButton" class="mirror-button" type="button" aria-pressed="false" title="Abrir leitura em tela cheia"><svg class="expand-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 3.5H3.5V7M13 3.5h3.5V7M16.5 13v3.5H13M7 16.5H3.5V13" /></svg><svg class="compress-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M3.5 7h3.5V3.5M16.5 7H13V3.5M13 16.5V13h3.5M6.5 13v3.5H3.5" /></svg><span id="fullscreenLabel">Tela cheia</span></button></div>
+          </div>
+          <div class="reading-window" id="readingWindow" tabindex="0" aria-label="Texto do teleprompter. Use espaço para iniciar ou pausar.">
+            <div class="reading-guide" aria-hidden="true"></div>
+            <div id="readingText" class="reading-text"><span class="placeholder-icon" aria-hidden="true">✳</span><p>Seu roteiro aparecerá aqui.</p><span class="placeholder-caption">Adicione seu texto ao lado para começar.</span></div>
+          </div>
+          <div class="reader-footer"><span class="reader-tip"><span class="tip-icon">✳</span> Olhe para a câmera e deixe as palavras fluírem.</span><span id="progressText">0% concluído</span></div>
+          <div class="controls"><button class="restart-button" id="restartButton" type="button" aria-label="Reiniciar leitura" title="Reiniciar"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4.5 6.5V3.75m0 0h2.75M4.5 3.75A7 7 0 1 1 3 10" /></svg></button><button class="play-button" id="playButton" type="button"><svg class="play-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4.5 9 5.5-9 5.5z" /></svg><svg class="pause-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M6.5 4.5v11m7-11v11" /></svg><span id="playLabel">Começar leitura</span><kbd>ESPAÇO</kbd></button><span class="control-hint">Você controla o ritmo.</span></div>
+        </section>
+      </section>
+      <footer class="page-footer"><span>Feito para ajudar você a se sentir à vontade diante da câmera.</span><span>Seus roteiros ficam salvos apenas neste dispositivo.</span></footer>
+    </main>
+  </body>
+</html>
